@@ -1,4 +1,6 @@
 {
+	"name": "dweineratl/clean_blog_theme",
+	"type": "drupal-theme",
     "require": {
       "drupal/core": "^9 || ^10 || ^11",
       "drupal/classy": "^1.0"
