@@ -4,7 +4,8 @@
  * @file
  * Functions to support theming in the Btheme.
  */
-define('THEME_PATH', base_path() . \Drupal::service('extension.list.theme')->getPath('clean_blog_theme'));
+$theme_name = \Drupal::theme()->getActiveTheme()->getName();
+define('THEME_PATH', base_path() . \Drupal::service('extension.list.theme')->getPath($theme_name));
 // Change the value to increase the slideshow.
 define('SLIDESHOW_COUNT', 5);
 
@@ -34,11 +35,11 @@ function clean_blog_theme_preprocess_page(&$vars) {
         $vars['conditionalStr'] = 'col-lg-12  centered ';
     }
     // Slide show
-    $show_slideshow = theme_get_setting('slideshow_display', 'clean_blog_theme');
+    $show_slideshow = theme_get_setting('slideshow_display');
     if ($vars['is_front'] && $show_slideshow) {
         $vars['slider'] = array();
         for ($i = 1; $i <= SLIDESHOW_COUNT; $i++) {
-            $fid = theme_get_setting("slide_image_{$i}", "clean_blog_theme");
+            $fid = theme_get_setting("slide_image_{$i}");
             if (!empty($fid)) {
                 $file = File::load($fid[0]);
                 $uri = $file->getFileUri();
@@ -47,9 +48,9 @@ function clean_blog_theme_preprocess_page(&$vars) {
                 $image_path = THEME_PATH . "/images/slider_img{$i}.jpg";
             }
             $vars['slider'][] = array(
-                'url' => theme_get_setting("slide_url_{$i}", "clean_blog_theme"),
+                'url' => theme_get_setting("slide_url_{$i}"),
                 'src' => $image_path,
-                'title' => theme_get_setting("slide_title_{$i}", "clean_blog_theme"),
+                'title' => theme_get_setting("slide_title_{$i}"),
             );
         }
     }
@@ -74,7 +75,7 @@ function clean_blog_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\
     $form['busi_settings']['slideshow']['slideshow_display'] = array(
         '#type' => 'checkbox',
         '#title' => t('Show slideshow'),
-        '#default_value' => theme_get_setting('slideshow_display', 'clean_blog_theme'),
+        '#default_value' => theme_get_setting('slideshow_display'),
         '#description' => t("Check this option to show Slideshow in front page. Uncheck to hide."),
     );
     $form['busi_settings']['slideshow']['slide'] = array(
@@ -91,19 +92,19 @@ function clean_blog_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\
         $form['busi_settings']['slideshow']['slide' . $i]['slide_title_' . $i] = array(
             '#type' => 'textfield',
             '#title' => t('Slide ' . $i . ' Title'),
-            '#default_value' => theme_get_setting("slide_title_{$i}", "clean_blog_theme"),
+            '#default_value' => theme_get_setting("slide_title_{$i}"),
         );
         $form['busi_settings']['slideshow']['slide' . $i]['slide_image_' . $i] = array(
             '#type' => 'managed_file',
             '#title' => t('Slide ' . $i . ' Image'),
             '#description' => t('Use same size for all the slideshow images(Recommented size : 1920 X 603).'),
-            '#default_value' => theme_get_setting("slide_image_{$i}", "clean_blog_theme"),
+            '#default_value' => theme_get_setting("slide_image_{$i}"),
             '#upload_location' => 'public://',
         );
         $form['busi_settings']['slideshow']['slide' . $i]['slide_url_' . $i] = array(
             '#type' => 'textfield',
             '#title' => t('Slide ' . $i . ' URL'),
-            '#default_value' => theme_get_setting("slide_url_{$i}", "clean_blog_theme"),
+            '#default_value' => theme_get_setting("slide_url_{$i}"),
         );
     }
 

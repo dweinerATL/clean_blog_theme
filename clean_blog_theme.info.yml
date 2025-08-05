@@ -1,8 +1,8 @@
 name: clean_blog_theme
 type: theme
 base theme: classy
-description: 'Classic Blog is clean blogger theme.'
-core_version_requirement: ^8 || ^9 || ^10 || ^11
+description: 'Clean Blog Theme is clean blogger theme forked from https://git.drupalcode.org/project/d8_blog_theme'
+core_version_requirement: ^9 || ^10 || ^11
 libraries:
   - clean_blog_theme/bootstrap-lib
   - clean_blog_theme/global-css
