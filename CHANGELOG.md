@@ -10,3 +10,4 @@
 ## 1.0.0
 * Forked from drupal/d8_blog_theme
 * Added Drupal 11 support
+* Fixed issue with space in filename
