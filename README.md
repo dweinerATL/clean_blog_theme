@@ -1,18 +1,41 @@
 # Clean Blog Theme
 
-This theme was manually forked from [drupal/d8_blog_theme](https://git.drupalcode.org/project/d8_blog_theme) to provide Drupal 11 support and allow it to be used as a base theme for customization.
+Clean Blog Theme is a clean blogger theme forked from https://git.drupalcode.org/project/d8_blog_theme.
 
-Currently, no changes have been made beyond adding Drupal 11 compatibility, allowing sub-theming and removing support for Drupal 8. 
+## Bootstrap 5
 
-### From the original README.md
-This drupal theme is very useful if you want to use drupal 8,9,10 to create your powerful blogging website as this theme has following features:
+This theme now uses Bootstrap 5 instead of Bootstrap 3. The Bootstrap 5 CSS and JavaScript files are included locally in the theme.
 
-1. Simple clean design
-2. Supports 1-column, 2-column and 3-columns layout
-3. Ability to change color of theme
-4. Implementation of Customizable Slideshow
-5. Drop-down menus
-6. HTML5 & clean markup
-7. Ability to have Sidebar on Right or Left
-8. Ideal for corporate, business and personal sites
-9. Supports theme features like: site logo, site name, site slogan, user pictures, favicon
+For detailed information about the Bootstrap 5 upgrade, including limitations, future improvements, and testing guidance, please see the [BOOTSTRAP5-UPGRADE.md](BOOTSTRAP5-UPGRADE.md) file.
+
+## Installation
+
+1. Install the theme as you would normally install a Drupal theme.
+2. Go to Appearance and set Clean Blog Theme as your default theme.
+
+## Configuration
+
+The theme includes several configurable regions:
+- Header
+- Secondary menu
+- Breadcrumb
+- Highlighted
+- Home Highlight 1, 2, and 3
+- Content Top
+- Help
+- Content
+- First and Second Sidebar
+- Footer first, second, third, fourth, and fifth
+
+## Features
+
+- Responsive design
+- Bootstrap 5 integration
+- Clean and minimal blog layout
+- Customizable regions
+- Flexslider integration
+
+## Requirements
+
+- Drupal 9, 10, or 11
+- Base theme: classy
