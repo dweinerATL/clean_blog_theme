@@ -2,9 +2,9 @@ global-css:
   version: VERSION
   css:
     theme:
-     css/font-awesome.min.css: {}
-     includes/flexslider/flexslider.css: {}
-     css/style.css: {}
+      includes/flexslider/flexslider.css: {}
+      includes/fontawesome/css/all.min.css: {}
+      css/style.css: {}
   js:
     js/script.js: {}
     includes/flexslider/jquery.flexslider.js: {}
