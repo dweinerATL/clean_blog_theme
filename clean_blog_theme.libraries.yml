@@ -2,9 +2,9 @@ global-css:
   version: VERSION
   css:
     theme:
-     css/font-awesome.min.css: {}
-     includes/flexslider/flexslider.css: {}
-     css/style.css: {}
+      includes/flexslider/flexslider.css: {}
+      includes/fontawesome/css/all.min.css: {}
+      css/style.css: {}
   js:
     js/script.js: {}
     includes/flexslider/jquery.flexslider.js: {}
@@ -16,14 +16,13 @@ global-css:
     - core/once
 
 bootstrap-lib:
-  version: 1.x
+  version: 5.x
   css:
     theme:
       includes/bootstrap/css/bootstrap.min.css: {}
   js:
-    includes/bootstrap/js/bootstrap.min.js: {}
+    includes/bootstrap/js/bootstrap.bundle.min.js: {}
   dependencies:
-    - core/jquery
     - core/drupal.ajax
     - core/drupal
     - core/drupalSettings

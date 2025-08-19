@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.0
+* Upgraded to Bootstrap 5
+
 ## 1.0.1
 * Added CHANGELOG
 * Fixed issue with subtheme configuration being ignored
