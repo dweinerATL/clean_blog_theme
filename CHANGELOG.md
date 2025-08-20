@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.1.0
+ * Upgraded to Font Awesome 7 free
+
 ## 2.0.0
 * Upgraded to Bootstrap 5
 
